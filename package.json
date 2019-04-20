@@ -1,0 +1,25 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Pokedex web app using Pokemon API",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amber-Williams/pokedex-web-app.git"
+  },
+  "author": "Amber-Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amber-Williams/pokedex-web-app/issues"
+  },
+  "homepage": "https://github.com/Amber-Williams/pokedex-web-app#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.11"
+  }
+}
