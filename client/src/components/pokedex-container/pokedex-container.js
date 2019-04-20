@@ -14,10 +14,13 @@ class PokedexContainer extends Component {
       .then((data) => {
         let pokemonList = data.pokemon_entries.map((pokemon) => {
           const pokemonImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`;
+          const pokemonLink = `/pokemon/${pokemon.entry_number}`
           return (
             <div key={pokemon.entry_number}>
-              <h2>{pokemon.pokemon_species.name}</h2>
-              <img src={pokemonImg} alt={pokemon.pokemon_species.name}/>
+              <a href={pokemonLink}>
+                <h2>{pokemon.pokemon_species.name}</h2>
+                <img src={pokemonImg} alt={pokemon.pokemon_species.name}/>
+              </a>
             </div>
           )
         })
