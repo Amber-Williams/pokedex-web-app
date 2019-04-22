@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Amber-Williams/pokedex-web-app/issues"
   },
-  "homepage": "https://github.com/Amber-Williams/pokedex-web-app#readme",
+  "homepage": "https://Amber-Williams.github.io/pokedex-web-app/client",
   "dependencies": {
     "express": "^4.16.4"
   },
