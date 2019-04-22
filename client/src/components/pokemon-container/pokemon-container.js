@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import PokemonCard from '../pokemon-card/pokemon-card';
 
 class PokemonContainer extends Component {
   state = {
     pokeId: this.props.match.params.id,
     evolutionLink: null,
-    evolution: null
+    evolution: null,
+    pokemon: null,
+    pokeStats: null
   }
   componentDidMount(){
     this.getPokeSpec();
@@ -14,8 +17,6 @@ class PokemonContainer extends Component {
     //Gets pokemon's evolution chain
     await fetch(this.state.evolutionLink)
       .then((res) => {
-        console.log(this.state.evolutionLink)
-        console.log(this.state.test)
         return res.json();
       })
       .then((data) => {
@@ -32,8 +33,9 @@ class PokemonContainer extends Component {
 
           evoData = evoData['evolves_to'][0];
         } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
-        console.log(evoChain)
-        console.log(data.chain)
+        this.setState({
+          evolution: evoChain
+        })
       })
       .catch((err) =>{
         console.log(`Pokemon with id #${this.state.pokeId} failed to render because of ${err}`);
@@ -48,14 +50,33 @@ class PokemonContainer extends Component {
       })
       .then((data) => {
         this.setState({
-          evolutionLink: data.evolution_chain.url
+          evolutionLink: data.evolution_chain.url,
+          pokemon: data
         })
       })
     this.getEvoChain();
+    this.getPokeStats();
+  }
+
+  getPokeStats = () => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.pokeId}/`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      this.setState({
+        pokeStats: data
+      })
+    })
   }
 
   render(){
-    return <div>POKEMON CONTAINTER</div>
+    return <PokemonCard
+      evolution={this.state.evolution}
+      pokemon={this.state.pokemon}
+      pokeId={this.state.pokeId}
+      pokeStats={this.state.pokeStats}
+      />
   }
 }
 
