@@ -10,7 +10,12 @@
   display: flex; 
   justify-content: center;
   border: 1px grey solid;
+  background-color: white;
   margin: 10px;
+}
+.pokedex-card:hover {
+  border: 1px #D90429 solid;
+  box-shadow:0px 0px 0px 2px #D90429 inset;
 }
 
 .pokedex-card a {

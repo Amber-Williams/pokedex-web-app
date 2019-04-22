@@ -45,31 +45,23 @@ function PokemonCard (props) {
     pokemonDetails.name = props.pokemon.name.toUpperCase();
     pokemonDetails.habitat = props.pokemon.habitat.name;
     pokemonDetails.pokemonImg = props.pokeStats.sprites.front_default
-    pokemonDetails.stats = props.pokeStats.stats.map((stat) => { return (<div>{stat.stat.name}</div>)})
+    pokemonDetails.stats = props.pokeStats.stats.map((stat) => { return (<li>{stat.stat.name}</li>)})
   }
 
   return (
-    <div>
-      <br/>
-
-      {pokemonDetails.name}
-
-      <br/>
-      <img src={pokemonDetails.pokemonImg} alt={pokemonDetails.name}/>
-      <br/>
-      {pokemonDetails.des}
-      <br/>
-      <br/>
-      Height: {props.pokeStats ? props.pokeStats.height : null}
-      <br/>
-      Weight: {props.pokeStats ? props.pokeStats.weight : null}
-      <br/>
-      Habitat: {pokemonDetails.habitat}
-      <br/>
-      Stats: {pokemonDetails.stats}
-      <br/>
-      Evolution Chain: 
-      <div className="evolutionChain">{evolutionChain}</div>
+    <div className="pokemonCardContainer">
+        <div className="card--head">
+          <div>
+            <h1>{pokemonDetails.name}</h1>
+            <img src={pokemonDetails.pokemonImg} alt={pokemonDetails.name}/>
+          </div>
+          <p>{pokemonDetails.des}</p>
+        </div>
+        <h3>Height: {props.pokeStats ? props.pokeStats.height : null}</h3>
+        <h3>Weight: {props.pokeStats ? props.pokeStats.weight : null}</h3>
+        <h3>Habitat: {pokemonDetails.habitat}</h3>
+        <h3>Stats: <ul>{pokemonDetails.stats}</ul></h3>
+      <h3>Evolution Chain:</h3> <div className="evolutionChain">{evolutionChain}</div>
     </div>
       
   )

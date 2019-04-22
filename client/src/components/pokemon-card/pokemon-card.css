@@ -3,20 +3,18 @@
   flex-direction: row;
   justify-content: center;
 }
-
 .evolutionChain div div{
   padding: 10px;
   border: 1px grey solid;
   box-shadow: 10px 14px #282c34;
+  background-color: white;
 }
-
 .evolutionChain h2 {
   color: #D90429;
 }
 .evolutionChain a {
   text-decoration: none;
 }
-
 .evoFirstChildren {
   display: flex;
   flex-direction: row;
@@ -25,4 +23,35 @@
 
 .evoFirstChildren h1 {
   margin: 10px 10px 10px 20px;
+}
+
+.pokemonCardContainer {
+  padding: 30px 30px;
+  margin: 0px 15%;
+  background-color: rgb(212, 212, 212);
+}
+
+@media only screen and (max-width: 700px) {
+  .pokemonCardContainer {
+    margin:0;
+  }
+}
+
+.card--head {
+  display: flex;
+  flex-direction: row;
+}
+
+.card--head h1 {
+  margin: 10px;
+}
+
+.card--head p {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .card--head {
+    flex-direction: column;
+  }
 }
