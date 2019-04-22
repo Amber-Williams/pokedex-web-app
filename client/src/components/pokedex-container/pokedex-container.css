@@ -1,0 +1,39 @@
+.pokedexContainer {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pokedex-card {
+  width: 23%;
+  display: flex; 
+  justify-content: center;
+  border: 1px grey solid;
+  margin: 10px;
+}
+
+.pokedex-card a {
+  text-decoration: none;
+}
+.pokedex-card h2 {
+  color: #D90429;
+}
+
+@media only screen and (max-width: 600px) {
+  .pokedex-card {
+    width: 33%; 
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .pokedex-card {
+    width: 50%; 
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  .pokedex-card {
+    width: 100%; 
+  }
+}

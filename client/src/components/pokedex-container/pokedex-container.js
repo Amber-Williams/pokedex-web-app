@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './pokedex-container.css';
 
 class PokedexContainer extends Component {
   state = {
@@ -16,7 +17,7 @@ class PokedexContainer extends Component {
           const pokemonImg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.entry_number}.png`;
           const pokemonLink = `/pokemon/${pokemon.entry_number}`
           return (
-            <div key={pokemon.entry_number}>
+            <div className="pokedex-card" key={pokemon.entry_number}>
               <a href={pokemonLink}>
                 <h2>{pokemon.pokemon_species.name}</h2>
                 <img src={pokemonImg} alt={pokemon.pokemon_species.name}/>
@@ -31,7 +32,7 @@ class PokedexContainer extends Component {
   }
 
   render() {
-    return <div>{this.state.pokemon}</div>
+    return <div className="pokedexContainer">{this.state.pokemon}</div>
   }
 }
 
