@@ -10,8 +10,8 @@ function PokemonCard (props) {
     if (index === props.evolution.length-1) {
       //Last pokemon in evolution chain should not have arrow
       return (
-        <div>
-          <div key={pokemon.species_id}>
+        <div key={pokemon.species_id}>
+          <div>
             <a href={pokemonLink}>
               <h2>{pokemon.species_name.toUpperCase()}</h2>
               <img src={pokemonImg} alt={pokemon.species_name}/>
@@ -21,8 +21,8 @@ function PokemonCard (props) {
       )
     }
     return (
-      <div className="evoFirstChildren">
-        <div key={pokemon.species_id}>
+      <div key={pokemon.species_id} className="evoFirstChildren">
+        <div>
           <a href={pokemonLink}>
             <h2>{pokemon.species_name.toUpperCase()}</h2>
             <img src={pokemonImg} alt={pokemon.species_name}/>
@@ -41,12 +41,14 @@ function PokemonCard (props) {
     stats: null
   };
   if(props.pokemon && props.pokeStats){
+    console.log(props.pokeStats.stats)
     pokemonDetails.des= props.pokemon.flavor_text_entries[9].flavor_text;
     pokemonDetails.name = props.pokemon.name.toUpperCase();
     pokemonDetails.habitat = props.pokemon.habitat.name;
     pokemonDetails.pokemonImg = props.pokeStats.sprites.front_default
-    pokemonDetails.stats = props.pokeStats.stats.map((stat) => { return (<li>{stat.stat.name}</li>)})
+    pokemonDetails.stats = props.pokeStats.stats.map((stat) => { return (<li key={stat.stat.name}>{stat.stat.name}: {stat.base_stat}</li>)})
   }
+
 
   return (
     <div className="pokemonCardContainer">
