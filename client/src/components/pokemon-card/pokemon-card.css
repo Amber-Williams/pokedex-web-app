@@ -1,0 +1,28 @@
+.evolutionChain {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.evolutionChain div div{
+  padding: 10px;
+  border: 1px grey solid;
+  box-shadow: 10px 14px #282c34;
+}
+
+.evolutionChain h2 {
+  color: #D90429;
+}
+.evolutionChain a {
+  text-decoration: none;
+}
+
+.evoFirstChildren {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.evoFirstChildren h1 {
+  margin: 10px 10px 10px 20px;
+}

@@ -59,6 +59,7 @@ class PokemonContainer extends Component {
   }
 
   getPokeStats = () => {
+    //Get's pokemon stats
     fetch(`https://pokeapi.co/api/v2/pokemon/${this.state.pokeId}/`)
     .then((res) => {
       return res.json();
